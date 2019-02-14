@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import yahtzee.Dice;
 import yahtzee.Yahtzee;
 import yahtzee.YahtzeeConsole;
+import yahtzee.YahtzeePrinter;
 
 import static org.mockito.Mockito.*;
 
@@ -12,11 +13,12 @@ class AT_OnesTwosAndThrees {
     @Test
     void score_Ones_category() {
         YahtzeeConsole console = mock(YahtzeeConsole.class);
+        YahtzeePrinter printer = new YahtzeePrinter(console);
 
         Dice dice = mock(Dice.class);
         when(dice.roll()).thenReturn(2, 4, 1, 6, 1, 1, 5, 2, 1, 5);
 
-        new Yahtzee(console, dice).run();
+        new Yahtzee(printer, dice).run();
 
         verify(console).printLine("Category: Ones");
 
