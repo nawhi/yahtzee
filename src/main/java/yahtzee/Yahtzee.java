@@ -2,14 +2,15 @@ package yahtzee;
 
 public class Yahtzee {
     private final YahtzeePrinter printer;
-    private final Dice dice;
+    private DiceGenerator diceGenerator;
 
-    public Yahtzee(YahtzeePrinter printer, Dice dice) {
+    public Yahtzee(YahtzeePrinter printer, DiceGenerator diceGenerator) {
         this.printer = printer;
-        this.dice = dice;
+        this.diceGenerator = diceGenerator;
     }
 
     public void run() {
         printer.printCategoryHeader(YahtzeeCategory.Ones);
+        printer.printHand(diceGenerator.rollTimes(5));
     }
 }

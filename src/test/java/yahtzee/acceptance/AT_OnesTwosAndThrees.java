@@ -1,10 +1,7 @@
 package yahtzee.acceptance;
 
 import org.junit.jupiter.api.Test;
-import yahtzee.Dice;
-import yahtzee.Yahtzee;
-import yahtzee.YahtzeeConsole;
-import yahtzee.YahtzeePrinter;
+import yahtzee.*;
 
 import static org.mockito.Mockito.*;
 
@@ -17,8 +14,9 @@ class AT_OnesTwosAndThrees {
 
         Dice dice = mock(Dice.class);
         when(dice.roll()).thenReturn(2, 4, 1, 6, 1, 1, 5, 2, 1, 5);
+        var diceGenerator = new DiceGenerator(dice);
 
-        new Yahtzee(printer, dice).run();
+        new Yahtzee(printer, diceGenerator).run();
 
         verify(console).printLine("Category: Ones");
 
