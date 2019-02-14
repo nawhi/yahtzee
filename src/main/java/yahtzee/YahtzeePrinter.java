@@ -1,11 +1,13 @@
 package yahtzee;
 
 public class YahtzeePrinter {
+    private YahtzeeConsole console;
+
     public YahtzeePrinter(YahtzeeConsole console) {
-        throw new UnsupportedOperationException("TODO");
+        this.console = console;
     }
 
-    void printCategoryHeader(YahtzeeCategory ones) {
-        throw new UnsupportedOperationException("TODO");
+    void printCategoryHeader(YahtzeeCategory category) {
+        console.printLine("Category: " + category.displayName());
     }
 }
