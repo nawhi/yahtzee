@@ -1,14 +1,20 @@
 package yahtzee;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class DiceGenerator {
-    public DiceGenerator(Dice dice) {
+    private Dice dice;
 
+    public DiceGenerator(Dice dice) {
+        this.dice = dice;
     }
 
     List<Integer> rollTimes(int times) {
-        throw new UnsupportedOperationException("TODO");
-
+        return IntStream.range(0, times)
+                .map(i -> dice.roll())
+                .boxed()
+                .collect(Collectors.toList());
     }
 }
