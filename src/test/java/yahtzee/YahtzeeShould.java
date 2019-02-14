@@ -53,6 +53,6 @@ class YahtzeeShould {
 
         yahtzee.run();
 
-        verify(yahtzeePrinter).printHand(hand);
+        verify(yahtzeePrinter).printHand(new DiceHand(hand));
     }
 }

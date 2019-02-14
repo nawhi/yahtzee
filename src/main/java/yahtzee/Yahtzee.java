@@ -11,6 +11,6 @@ public class Yahtzee {
 
     public void run() {
         printer.printCategoryHeader(YahtzeeCategory.Ones);
-        printer.printHand(diceGenerator.rollTimes(5));
+        printer.printHand(new DiceHand(diceGenerator.rollTimes(5)));
     }
 }
