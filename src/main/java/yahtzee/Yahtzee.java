@@ -1,6 +1,10 @@
 package yahtzee;
 
-class Yahtzee {
-    void run() {
+public class Yahtzee {
+    public Yahtzee(YahtzeeConsole console, Dice dice) {
+        throw new UnsupportedOperationException("TODO");
+    }
+
+    public void run() {
     }
 }
